@@ -8,6 +8,9 @@ Presentation {
     height: 720
 
     fontFamily: "Arial"
+    bulletSpacing: 0.5
+    bulletColor: "#C09100"
+    contentMargin: 20
 
     SlideCounter {
         textColor: "white"
@@ -113,17 +116,21 @@ Presentation {
         content: [
             "Line 1",
             "Line 2",
-            " Subline 1"
+            " Subline 1",
+            "  SubSubline 1"
         ]
 
         Rectangle {
             anchors.fill: parent
             color: "gray"
             radius: 8
-            opacity: 0.5
+            opacity: 0.2
             border.color: "black"
             border.width: 1
             z: -1
+
+            // Hide this for now, this is just an example
+            visible: false
         }
 
         onVisibleChanged: {
@@ -132,6 +139,11 @@ Presentation {
                 lefter.visible = true;
             }
         }
+
+        anchors.left: parent.left
+        anchors.leftMargin: lefter.width + 50
+        anchors.right: parent.right
+        anchors.rightMargin: 50
     }
 
     Slide {
@@ -146,5 +158,10 @@ Presentation {
                 lefter.visible = true;
             }
         }
+
+        anchors.left: parent.left
+        anchors.leftMargin: lefter.width + 50
+        anchors.right: parent.right
+        anchors.rightMargin: 50
     }
 }
