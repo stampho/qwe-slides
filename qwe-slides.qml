@@ -108,7 +108,59 @@ Presentation {
             if (visible) {
                 header.visible = true;
                 lefter.visible = false;
+            } else {
+                header.visible = false;
+                lefter.visible = true;
             }
+        }
+    }
+
+    Slide {
+        title: "General"
+        content: [
+            "Overview since:",
+            "TODO"
+        ]
+
+        anchors.left: parent.left
+        anchors.leftMargin: lefter.width + 50
+        anchors.right: parent.right
+        anchors.rightMargin: 50
+    }
+
+    Slide {
+        centeredText: "<b>Bugs</b>"
+        textFormat: Text.StyledText
+
+        AnimatedImage {
+            anchors.top: parent.top
+            anchors.horizontalCenter:  parent.horizontalCenter
+            source: "images/bug.gif"
+            z: -1
+        }
+    }
+
+    Slide {
+        centeredText: "<b>Features</b>"
+        textFormat: Text.StyledText
+
+        AnimatedImage {
+            anchors.top: parent.top
+            anchors.horizontalCenter:  parent.horizontalCenter
+            source: "images/motiv_penguin.gif"
+            z: -1
+        }
+    }
+
+    Slide {
+        centeredText: "<b>Testing</b>"
+        textFormat: Text.StyledText
+
+        AnimatedImage {
+            anchors.top: parent.top
+            anchors.horizontalCenter:  parent.horizontalCenter
+            source: "images/gears.gif"
+            z: -1
         }
     }
 
@@ -134,13 +186,6 @@ Presentation {
             visible: false
         }
 
-        onVisibleChanged: {
-            if (visible) {
-                header.visible = false;
-                lefter.visible = true;
-            }
-        }
-
         anchors.left: parent.left
         anchors.leftMargin: lefter.width + 50
         anchors.right: parent.right
@@ -153,16 +198,21 @@ Presentation {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut elementum mauris, non iaculis lorem.
             Donec a sem ut nulla vulputate aliquam. Aenean vehicula sem a nisi sagittis, a pellentesque justo sagittis."
 
-        onVisibleChanged: {
-            if (visible) {
-                header.visible = false;
-                lefter.visible = true;
-            }
-        }
-
         anchors.left: parent.left
         anchors.leftMargin: lefter.width + 50
         anchors.right: parent.right
         anchors.rightMargin: 50
+    }
+
+    Slide {
+        centeredText: "<b>Thank You For Your Attention!</b>"
+        textFormat: Text.StyledText
+
+        AnimatedImage {
+            anchors.top: parent.top
+            anchors.horizontalCenter:  parent.horizontalCenter
+            source: "images/penguin_go.gif"
+            z: -1
+        }
     }
 }
