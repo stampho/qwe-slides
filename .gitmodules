@@ -1,0 +1,4 @@
+[submodule "3rdparty/qml-presentation-system"]
+	path = 3rdparty/qml-presentation-system
+	url = https://github.com/stampho/qml-presentation-system.git
+	branch = master
