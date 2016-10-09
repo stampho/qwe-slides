@@ -11,6 +11,7 @@ Presentation {
     bulletSpacing: 0.5
     bulletColor: "#C09100"
     contentMargin: 20
+    slideTitleAlignment: Text.AlignLeft
 
     SlideCounter {
         textColor: "white"
