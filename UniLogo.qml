@@ -11,7 +11,7 @@ Rectangle {
 
     color: "transparent"
 
-    border.color: "black"
+    border.color: "green"
     border.width: 0
 
     Rectangle {
@@ -25,8 +25,8 @@ Rectangle {
 
         color: "transparent"
 
+        border.color: "red"
         border.width: parent.border.width
-        border.color: parent.border.color
 
         transform: [
             Rotation {
@@ -36,22 +36,25 @@ Rectangle {
 
             },
             Scale {
+                id: logoScale
                 origin.x: 0
                 origin.y: 0
 
-                xScale: root.isHorizontal() ? root.width / logo.width : root.height / logo.width
+                xScale: root.isHorizontal() ?
+                            root.height / logo.height :
+                            (root.width / logo.height < root.height / logo.width) ? root.width / logo.height : root.height / logo.width
                 yScale: xScale
             },
             Translate {
-                x: 0
-                y: root.isHorizontal() ? 0 : root.height
+                x: root.isHorizontal() ? root.width / 2 - (logo.width * logoScale.xScale) / 2 : 0
+                y: root.isHorizontal() ? 0 : root.height / 2 + (logo.width * logoScale.xScale) / 2
             }
         ]
 
         Text {
             id: firstLine
-            x: parent.x + parent.leftMargin
-            y: parent.y + parent.topMargin
+            x: parent.leftMargin
+            y: parent.topMargin
             text: "UNIVERSITAS SCIENTIARUM SZEGEDIENSIS"
             color: "#002285"
             font.pixelSize: 22
@@ -59,8 +62,8 @@ Rectangle {
         }
 
         Text {
-            x: parent.x + parent.leftMargin + 375
-            y: parent.y + parent.topMargin + 18
+            x: parent.leftMargin + 375
+            y: parent.topMargin + 18
             text: "UNIVERSITY OF SZEGED"
             color: "#002285"
             font.pixelSize: 22
@@ -69,8 +72,8 @@ Rectangle {
         }
 
         Text {
-            x: parent.x + parent.leftMargin + 300
-            y: parent.y + parent.topMargin + 35
+            x: parent.leftMargin + 300
+            y: parent.topMargin + 35
             text: "Department of Software Engineering"
             color: "#C09100"
             font.pixelSize: 22
@@ -79,8 +82,8 @@ Rectangle {
         }
 
         Rectangle {
-            x: parent.x + parent.leftMargin + 645
-            y: parent.y + parent.topMargin + 5
+            x: parent.leftMargin + 645
+            y: parent.topMargin + 5
             width: 15
             height: 15
             color: "#C09100"

@@ -7,7 +7,7 @@ Presentation {
     width: 1280
     height: 720
 
-    property string fontFamily: "Arial"
+    fontFamily: "Arial"
 
     SlideCounter {
         textColor: "white"
@@ -30,9 +30,26 @@ Presentation {
             anchors.left: parent.left
             anchors.right: parent.right
 
-            height: parent.height * 0.08
+            height: parent.height * 0.1
 
             orentation: Qt.Horizontal
+
+            border.width: 0
+        }
+
+        Image {
+            source: "images/griff.png"
+
+            visible: header.visible
+            opacity: 0.15
+
+            width: sourceSize.width * (height / sourceSize.height)
+            height: presentation.width / 4
+
+            anchors.top: header.bottom
+            anchors.topMargin: 50
+            anchors.right: parent.right
+            anchors.rightMargin: 20
         }
 
         UniLogo {
@@ -42,14 +59,26 @@ Presentation {
             anchors.left: parent.left
             anchors.bottom: footer.top
 
-            anchors.topMargin: 20
-            anchors.bottomMargin: 20
-
-            width: parent.width * 0.05
+            width: parent.width * 0.08
 
             orentation: Qt.Vertical
 
-            visible: false
+            border.width: 0
+        }
+
+        Image {
+            source: "images/griff.png"
+
+            visible: lefter.visible
+            opacity: 0.15
+
+            width: sourceSize.width * (height / sourceSize.height)
+            height: presentation.height / 5
+
+            anchors.bottom: footer.top
+            anchors.bottomMargin: 50
+            anchors.left: parent.left
+            anchors.leftMargin: lefter.width / 3
         }
 
         Rectangle {
