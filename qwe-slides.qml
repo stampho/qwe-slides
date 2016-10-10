@@ -119,8 +119,10 @@ Presentation {
         title: "General"
         content: [
             "Overview since:",
+            "<a href='http://qt.io'>qt.io</a>",
             "TODO"
         ]
+        textFormat: Text.StyledText
 
         anchors.left: parent.left
         anchors.leftMargin: lefter.width + 50
